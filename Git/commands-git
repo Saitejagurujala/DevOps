@@ -1,0 +1,124 @@
+git commands:
+
+create a folder ..get inside the folder...create a file ....right click and open gitbash 
+
+1) git init   -> start the git 
+
+2) git config --global user.name "akshat"  
+
+3) git config --global user.email "akshat@apicletech.com"
+
+4) create a file named homepage.txt in the folder you are working ...add some 
+content like "this is homepage" in that file
+
+5) git status   ==> you will see that some red color file homepage.txt is showing
+which means my file is in the working directory ....so i have to move to staging area
+
+6) git add .   (or you can also use git add homepage.txt) (add the homepage to the staging arera)
+
+7) Create one more file with name akshat.txt ....in the folder
+
+8) git status   ==> you will that the homepage.txt is in staging area in greencolor whereas 
+the akshat.txt is in the red color which means it is still in the working dir
+
+9) Go back to folder and modify both the files...lets say add content "hello akshat" in both the files
+
+10) git status   ==> you will see that git is able to track the chnages in homeopage file 
+but not able to track the changes in akshat.txt because akshat.txt is not tracking yet
+as we have not put it in the staging area
+
+11) git add .  ==> put both akshat.txt and homepage.txt (latest) in staging area
+
+12) git status   ==> both the files in green color means both are in staging area
+
+####YOU RELIASED THAT AKSHAT.txt is added to staging area by mistake...now need to remove that file
+from the staging area
+
+13) git rm --cached akshat.txt    => remove the file named akshat.txt from the staging area to wd
+
+14) git status   ==> you will see akshat.txt is again in red means it is moved to working dir (WD) 
+
+###### Lets suppose you modify you homepage file again ...add some content like "akshat is teaching"
+now i want to identify what exact content got modified ? comparing the content between staging
+area and working directory
+
+
+15) git diff homepage.txt    ==> you will the modification which we have done in working directorty
+                                 and content different between working directory and staging area
+
+16) git add .
+
+17) git status
+
+#############SAVE THE AS VERSION AND PUT THE VERSION IN LOCAL REPO
+
+18) git commit -m"First commit"  => for all the files in staging area it would put it 
+				    as a version in local repo. Here -m denotes message
+
+19)git status  => working tree as clean because there is no modification or new file in working directory
+
+########################## To see the commits which we have performed
+
+20) git log 
+
+21) git log --oneline
+
+###GITHUB
+
+22) create github account and create a repo 
+
+#####
+
+
+23) git remote add origin <<git repo url>>
+
+24) git push -u origin master
+
+25) a pop will appear in front of u ....
+
+26) go to git hub.com -> open link https://github.com/settings/tokens/
+generate the classic token  (ensure to tick repo )
+
+27) paste the token in pop up under token tab
+
+28) your files woudl be uploaded 
+if error comes you go to crendentials manager -> window credentials -> search for github credentials and delete github credentials and again push it
+
+29) git remote -v   (show you the remote repo which you have connected with your local) 
+
+####BRANCHING
+
+30) git branch   --> list the branches for me
+
+(it will show the master branch ...* means the current branch)
+
+31) git branch branch1  => create a new branch with name branch1
+
+32) git checkout branch1   => you will move to branch1
+
+33) git branch  => you will star marked on branch1
+
+34) touch file1inbranch1
+
+35) git add . 
+
+36) git commit -m"c1 in branch1"
+
+37) git log --oneline
+
+38) git checkout master
+
+39) touch file11   =>create a blank file named file11 in master branch
+
+40) git add .
+
+41) git commit -m"c2 in master"
+
+42) git merge branch1   => it will merge the branch1 with master
+
+it will open a file editor where in press i (to insert)
+the text in yellow color you can edit of content of commit
+
+after completing the editing you can press esc :wq
+
+43) git log --oneline --graph 
